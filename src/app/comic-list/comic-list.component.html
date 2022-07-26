@@ -1,0 +1,21 @@
+<div class="row">
+  <form class="col s12 m4 offset-m4" >
+    <div class="input-field">
+      <i class="material-icons prefix">search</i>
+      <input id="icon_prefix" type="text" name="keyword" [(ngModel)]="keyword" (keyup)="onSearch(keyword)">
+      <label for="icon_prefix">Search</label>
+    </div>
+  </form>
+</div>
+<div class="row">
+  <app-comic-item *ngFor="let cb of comics " [comic]="cb"  >
+<!--| slice: (pageNumber * limit) - limit: pageNumber * limit-->
+  </app-comic-item>
+</div>
+<ul class="pagination center container">
+  <li style="cursor: pointer" (click)="offset = offset - 20 ;onClick(offset)" ><i class="material-icons">chevron_left</i></li>
+  <li style="cursor: pointer" (click)="offset = offset + 20 ;onClick(offset)"><i class="material-icons">chevron_right</i></li>
+<!--  <li (click)="pageNumber = pageNumber - 1"><i class="material-icons">chevron_left</i></li>-->
+<!--  <li (click)="pageNumber = pageNumber + 1"><i class="material-icons">chevron_right</i></li>-->
+</ul>
+

@@ -1,0 +1,21 @@
+<div class="row" *ngIf="character">
+  <div class="col s12 m5 offset-m3">
+    <div class="card-panel white">
+      <h3 style="text-align: center">{{character.name}}</h3>
+      <img src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}" class="responsive-img" alt="">
+      <p>{{character.description}}</p>
+      <a href="{{character.urls[0].url}}" target="_blank">Marvel Profile</a>
+      <p style="font-weight: bold;text-align: center">Total Comics: {{character.comics.available}}
+         Total Stories: {{character.stories.available}}
+         Total Series: {{character.series.available}}
+         Total Events: {{character.events.available}}
+      </p>
+    </div>
+  </div>
+</div>
+<div class="row container">
+  <h4>Comics</h4>
+  <app-comic-item *ngFor="let cb of comics" [comic]="cb">
+  </app-comic-item>
+</div>
+

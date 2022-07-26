@@ -1,0 +1,18 @@
+<div>
+  <div class="card medium col s12 m2" style="margin: 30px">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}" >
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{character.name}}<i class="material-icons right">more_vert</i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{{character.name}}<i class="material-icons right">close</i></span>
+      <p>{{character.description}}</p>
+      <p>Total Comics: {{character.comics.available}} Total Stories: {{character.stories.available}}</p>
+    </div>
+    <div class="card-action">
+      <a style="color: #b9151b" [routerLink]="['/character-detail',character.id]">Character Detail</a>
+    </div>
+</div>
+</div>

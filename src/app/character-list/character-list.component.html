@@ -1,0 +1,10 @@
+<div class="row">
+  <app-character-item *ngFor="let ch of characters" [character]="ch">
+
+  </app-character-item>
+</div>
+<ul class="pagination center container">
+  <li style="cursor: pointer" (click)="offset = offset - 20 ;onClick(offset)" ><i class="material-icons">chevron_left</i></li>
+  <li style="cursor: pointer" (click)="offset = offset + 20 ;onClick(offset)"><i class="material-icons">chevron_right</i></li>
+</ul>
+
